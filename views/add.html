@@ -1,0 +1,24 @@
+<h1>add poll</h1>
+<form method="POST", action="/add">
+	<input name='text'>
+	<h3>choices</h3>
+	<div class="form-group" id="choices"></div>
+	<button type="button" id="chbutton">add choice</button>
+	<button type="submit" value="submit">submit</button>
+</form>
+
+<script>
+var fields = 1;
+chbutton = document.getElementById("chbutton");
+chbutton.addEventListener("click", addField, false);
+
+function addField() {
+	var choices = document.getElementById("choices");
+	choices.appendChild(document.createElement("br"));
+	var choice = document.createElement("input");
+	choice.type = "text";
+	choice.name = "choice" + fields;
+	choices.appendChild(choice);
+	fields += 1;
+}
+</script>
